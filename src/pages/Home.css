@@ -131,44 +131,57 @@
 .menu-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-  gap: 2rem;
+  gap: 3rem 2rem; /* More vertical gap for popping cups */
 }
 
 .menu-card {
-  padding: 2rem;
+  padding: 6rem 2rem 2rem;
   display: flex;
   flex-direction: column;
   transition: var(--transition);
+  position: relative;
+  margin-top: 100px; /* Space for the image to break out */
+  text-align: center;
+  border-radius: 40px;
+  background: var(--surface-color);
+  backdrop-filter: blur(10px);
 }
 
 .menu-card:hover {
   transform: translateY(-5px);
-  border-color: var(--primary-color);
+  background: var(--surface-hover);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.4);
 }
 
 .menu-card-img-wrapper {
+  position: absolute;
+  top: -100px;
+  left: 50%;
+  transform: translateX(-50%);
   height: 200px;
+  width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-bottom: 1.5rem;
+  transition: var(--transition);
+  pointer-events: none; /* Let clicks pass through if needed, though mostly visual */
 }
 
 .menu-card-img {
   max-height: 100%;
   max-width: 100%;
   object-fit: contain;
-  filter: drop-shadow(0 10px 15px rgba(0,0,0,0.5));
+  filter: drop-shadow(0 15px 20px rgba(0,0,0,0.6));
   transition: var(--transition);
 }
 
-.menu-card:hover .menu-card-img {
-  transform: scale(1.05);
+.menu-card:hover .menu-card-img-wrapper {
+  transform: translateX(-50%) translateY(-15px) scale(1.05);
 }
 
 .menu-card-content h3 {
   margin-bottom: 0.5rem;
-  font-size: 1.25rem;
+  font-size: 1.35rem;
 }
 
 .menu-card-footer {
@@ -184,8 +197,44 @@
 }
 
 .btn-sm {
-  padding: 0.5rem 1rem;
-  font-size: 0.875rem;
+  padding: 0;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  background-color: var(--primary-color);
+  border: none;
+  color: var(--bg-color);
+  cursor: pointer;
+}
+
+.btn-sm:hover {
+  transform: scale(1.1);
+}
+
+/* Rating Badge */
+.rating-badge {
+  position: absolute;
+  bottom: -15px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: white;
+  color: black;
+  padding: 0.25rem 0.75rem;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  box-shadow: 0 5px 10px rgba(0,0,0,0.2);
+}
+
+.rating-badge svg {
+  color: #ffb400;
 }
 
 /* About Preview */

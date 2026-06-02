@@ -5,11 +5,22 @@ import cup1 from '../assets/cropped/item_15.png';
 import cup2 from '../assets/cropped/item_16.png';
 import cup3 from '../assets/cropped/item_17.png';
 import spoon from '../assets/cropped/item_8.png';
+import bean1 from '../assets/cropped/item_13.png';
+import bean2 from '../assets/cropped/item_14.png';
+import bean3 from '../assets/cropped/item_6.png';
+import beanBig from '../assets/cropped/item_10.png';
 import './Home.css';
 
 const Home = () => {
   return (
-    <div className="home">
+    <div className="home" style={{ position: 'relative', overflow: 'hidden' }}>
+      {/* Decorative Beans */}
+      <img src={bean1} alt="" className="floating-bean float-1" style={{ top: '15%', left: '8%', width: '50px' }} />
+      <img src={bean2} alt="" className="floating-bean float-3" style={{ top: '45%', right: '5%', width: '60px' }} />
+      <img src={bean3} alt="" className="floating-bean float-2" style={{ bottom: '15%', left: '4%', width: '70px' }} />
+      <img src={beanBig} alt="" className="floating-bean float-1" style={{ top: '75%', right: '-5%', width: '250px', filter: 'blur(5px)', opacity: 0.3 }} />
+      <img src={beanBig} alt="" className="floating-bean float-3" style={{ top: '30%', left: '-8%', width: '180px', filter: 'blur(3px)', opacity: 0.4 }} />
+
       {/* Hero Section */}
       <section className="hero">
         <div className="container hero-container">
@@ -54,23 +65,23 @@ const Home = () => {
         </div>
       </section>
 
-      {/* Features Section */}
-      <section className="features bg-surface">
-        <div className="container features-container">
-          <div className="feature-card glass-panel">
-            <ShieldCheck size={40} className="text-primary mb-3" />
-            <h3>Premium Quality</h3>
-            <p className="text-muted">We source only the finest beans from top sustainable farms globally.</p>
+      <section className="features container section-padding" style={{ position: 'relative' }}>
+        <h2 className="section-title text-center text-primary" style={{ marginBottom: '4rem' }}>BODRIN это</h2>
+        <div className="features-container">
+          <div className="feature-card" style={{ position: 'relative' }}>
+            <div className="watermark-number" style={{ position: 'absolute', top: '-40px', left: '-20px', fontSize: '10rem', opacity: '0.05', fontWeight: 800 }}>1</div>
+            <h3 className="text-primary">Высокое качество зерен</h3>
+            <p className="text-muted">Наша страсть к кофе начинается с отбора зерен. Мы уделяем внимание каждой детали.</p>
           </div>
-          <div className="feature-card glass-panel">
-            <Star size={40} className="text-primary mb-3" />
-            <h3>Expert Roasting</h3>
-            <p className="text-muted">Our master roasters ensure perfect flavor profiles in every batch.</p>
+          <div className="feature-card" style={{ position: 'relative' }}>
+             <div className="watermark-number" style={{ position: 'absolute', top: '-40px', left: '-20px', fontSize: '10rem', opacity: '0.05', fontWeight: 800 }}>2</div>
+            <h3 className="text-primary">Атмосфера вдохновения</h3>
+            <p className="text-muted">Наше уютное убежище наполнено атмосферой тепла и уюта.</p>
           </div>
-          <div className="feature-card glass-panel">
-            <Clock size={40} className="text-primary mb-3" />
-            <h3>Fast Delivery</h3>
-            <p className="text-muted">Get your coffee fresh and hot, delivered straight to your door.</p>
+          <div className="feature-card" style={{ position: 'relative' }}>
+             <div className="watermark-number" style={{ position: 'absolute', top: '-40px', left: '-20px', fontSize: '10rem', opacity: '0.05', fontWeight: 800 }}>3</div>
+            <h3 className="text-primary">Индивидуальный подход</h3>
+            <p className="text-muted">Мы готовим кофе, отражающий ваши предпочтения, создавая уникальные напитки.</p>
           </div>
         </div>
       </section>
@@ -83,44 +94,47 @@ const Home = () => {
         </div>
         
         <div className="menu-grid mt-4">
-          <div className="menu-card glass-panel">
+          <div className="menu-card">
             <div className="menu-card-img-wrapper">
-              <img src={cup1} alt="Caramel Macchiato" className="menu-card-img" />
+              <img src={cup1} alt="Cappuccino" className="menu-card-img" />
+              <div className="rating-badge">4.9 <Star size={12} fill="#ffb400" /></div>
             </div>
             <div className="menu-card-content">
-              <h3>Caramel Macchiato</h3>
-              <p className="text-muted">Espresso layered with steamed milk and caramel.</p>
+              <h3>Cappuccino</h3>
+              <p className="text-muted" style={{ fontSize: '0.8rem' }}>20% эспрессо, 40% молока, 40% молочной пенки.</p>
               <div className="menu-card-footer">
-                <span className="price text-primary">$4.99</span>
-                <button className="btn btn-outline btn-sm">Add</button>
+                <span className="price text-main">120 р.</span>
+                <button className="btn-sm">+</button>
               </div>
             </div>
           </div>
           
-          <div className="menu-card glass-panel">
+          <div className="menu-card">
             <div className="menu-card-img-wrapper">
-              <img src={cup2} alt="Iced Vanilla Latte" className="menu-card-img" />
+              <img src={cup2} alt="Latte" className="menu-card-img" />
+              <div className="rating-badge">5.0 <Star size={12} fill="#ffb400" /></div>
             </div>
             <div className="menu-card-content">
-              <h3>Iced Vanilla Latte</h3>
-              <p className="text-muted">Chilled espresso with milk and vanilla syrup.</p>
+              <h3>Latte</h3>
+              <p className="text-muted" style={{ fontSize: '0.8rem' }}>30% эспрессо, 70% свежего молока.</p>
               <div className="menu-card-footer">
-                <span className="price text-primary">$5.49</span>
-                <button className="btn btn-outline btn-sm">Add</button>
+                <span className="price text-main">140 р.</span>
+                <button className="btn-sm">+</button>
               </div>
             </div>
           </div>
           
-          <div className="menu-card glass-panel">
+          <div className="menu-card">
             <div className="menu-card-img-wrapper">
-              <img src={cup3} alt="Dark Roast Mocha" className="menu-card-img" />
+              <img src={cup3} alt="Mocha" className="menu-card-img" />
+              <div className="rating-badge">4.7 <Star size={12} fill="#ffb400" /></div>
             </div>
             <div className="menu-card-content">
-              <h3>Dark Roast Mocha</h3>
-              <p className="text-muted">Rich espresso combined with dark chocolate.</p>
+              <h3>Mocha</h3>
+              <p className="text-muted" style={{ fontSize: '0.8rem' }}>20% эспрессо, 50% горячего молока.</p>
               <div className="menu-card-footer">
-                <span className="price text-primary">$5.99</span>
-                <button className="btn btn-outline btn-sm">Add</button>
+                <span className="price text-main">140 р.</span>
+                <button className="btn-sm">+</button>
               </div>
             </div>
           </div>

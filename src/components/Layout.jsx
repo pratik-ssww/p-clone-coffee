@@ -8,7 +8,8 @@ const Layout = () => {
 
   return (
     <div className="layout">
-      <nav className="navbar glass-panel">
+      <div className="watermark-text">TOP</div>
+      <nav className="navbar">
         <div className="container nav-container">
           <Link to="/" className="brand">
             <Coffee className="brand-icon text-primary" size={32} />

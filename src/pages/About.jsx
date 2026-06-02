@@ -1,6 +1,18 @@
+import bean1 from '../assets/cropped/item_5.png';
+import bean2 from '../assets/cropped/item_6.png';
+import bean3 from '../assets/cropped/item_10.png';
+
 const About = () => {
   return (
-    <div className="container page-wrapper" style={{ maxWidth: '800px' }}>
+    <div style={{ position: 'relative', overflow: 'hidden' }}>
+      {/* Decorative Beans */}
+      <img src={bean3} alt="" className="floating-bean float-1" style={{ top: '10%', left: '5%', width: '120px' }} />
+      <img src={bean1} alt="" className="floating-bean float-2" style={{ top: '60%', right: '8%', width: '60px' }} />
+      <img src={bean2} alt="" className="floating-bean float-3" style={{ bottom: '10%', left: '15%', width: '80px' }} />
+      <img src={bean3} alt="" className="floating-bean float-2" style={{ top: '40%', right: '-5%', width: '250px', filter: 'blur(5px)', opacity: 0.3 }} />
+      <img src={bean3} alt="" className="floating-bean float-1" style={{ bottom: '-5%', left: '-5%', width: '200px', filter: 'blur(3px)', opacity: 0.4 }} />
+
+      <div className="container page-wrapper" style={{ maxWidth: '800px', position: 'relative', zIndex: 1 }}>
       <h1 className="text-primary animate-fade-in" style={{ textAlign: 'center', marginBottom: '2rem', fontSize: '3rem' }}>About BrewHaven</h1>
       
       <div className="glass-panel animate-fade-in" style={{ padding: '3rem', animationDelay: '0.1s' }}>
@@ -28,6 +40,7 @@ const About = () => {
           </li>
         </ul>
       </div>
+    </div>
     </div>
   );
 };
